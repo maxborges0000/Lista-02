@@ -1,27 +1,20 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main()
-{
-    int mat[7][7];
+void main(){
+	 int matriz[7][7]={0};
+	  
+	 matriz[0][3]=1;
 
-   for(int l = 0; l <= 7; l++){
-         for(int c = 0; c <= 7; c++){
-            if(c = 0){
-            mat[l][c] = 1;
-            }else if(l = c && c > 0){
-                mat[l][c] = 1;
-            }else{
-                mat[l][c] = mat[l--][c] + mat[l--][c--];
-            }
-        }
-   }    
-        for(int l = 0; l <= 7; l++ ){
-            for(int c = 0; c = l; c++ ){
-        printf("%d-", mat[l][c]);
-            }
-       printf("\n");
-        }
-    
-    
-    return 0;
+	 for(int l=1; l<4; l++){
+	 	 for(int c=1; c<7; c++){
+	 	 	 matriz[l][c] = matriz[l-1][c-1] + matriz[l-1][c+1];
+	 	     
+	 	  }	 	 
+	   } 
+	 	for(int l=0; l<7; l++){
+	 		for(int c=0; c<7; c++){
+	 			printf("%d  ", matriz[l][c]);
+	 		}
+	 		printf("\n");
+	 	}	
 }
