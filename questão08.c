@@ -1,32 +1,44 @@
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
+#include <stdio.h>
 
-int converte_binario(int n){
-	int temp,cont=0,bin[50];
-	while(n!=1){
-	    temp=n%2;
-	    n=n/2;
-	    bin[cont]=temp;
-	    cont++;
+int b(int n1){
 
-	}
-	bin[cont]=1
-	for(int c=9;c>=0;c--){
-	    printf("%i",bin[c]);
+    int i = 0, j, vet[10];
 
+    while(n1 >= 2){
+        if (n1 % 2 == 0) {
+            vet[i] = 0;
+            n1 = n1 / 2;
+        }
+        else {
+            vet[i] = 1;
+            n1 = n1 / 2;
+        }
+            i++;
+    }
 
+    vet[i] = 1;
+    int a = 0;
+    char r[i+1];
+    for(j = i; j >= 0; j--){
+        vet[j];
+        if(vet[j] == 1){
+            r[a] = '1';
+        }if(vet[j] == 0){
+            r[a] = '0';
+        }
+
+        a++;
+    }
+return atoi(r);
 }
 
-	return 0;
+int main()
+{
 
-}
-
-n*pow
-
-void main(){
-
-	bin[]
-
-
+int n1;
+char resutado[10];
+    printf("Digite um número:");
+    scanf("%d",&n1);
+    printf(" Valor em Binário: %d ", b(n1));
+return 0;
 }
